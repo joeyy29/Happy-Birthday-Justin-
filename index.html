@@ -5,18 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
     <style>
-        body { 
-            text-align: center; 
+        body {
+            text-align: center;
             font-family: Arial, sans-serif;
             background-color: #ffe4e1;
         }
         h1 {
             color: #ff1493;
         }
+        .section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .gift-box {
+            display: inline-block;
+            padding: 20px;
+            background: gold;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1>Happy BirthdayTatana Makandla!🥰🎉</h1>
-    <p>Welcome to your special birthday surprise!</p>
+    <h1>Happy Birthday Tatana Makandla!🥰🎉</h1>
+    
+    <div class="section">
+        <h2>Special Message 💌</h2>
+        <p>Click the gift box to reveal your message!</p>
+        <div class="gift-box" onclick="revealMessage()">🎁 Open Gift</div>
+        <p class="hidden-message" id="message"> 🥹No words can fully express how much i love you and how much I deeply appreciate you. 🥹You are my rock and my best friend🥺my favourite person in the world. And I love doig this life thing with you❤️🥹Nakuranza baby! Wishing you the happiest birthday ever!🥳💕</p>
+    </div>
+    
+    <div class="section">
+        <h2>Photo Gallery 📸</h2>
+        <p>Coming soon...</p>
+    </div>
+    
+    <div class="section">
+        <h2>Fun Birthday Quiz 🎮</h2>
+        <div class="quiz-container">
+            <p class="question">1. What was our first official date?</p>
+            <button onclick="checkAnswer(this, 'Correct! ❤️')">Cocktail date</button>
+            <button onclick="checkAnswer(this, 'Nope! 😜')">Ice-cream</button>
+            <button onclick="checkAnswer(this, 'Nice try! 😂')">Movies</button>
+            <p class="feedback"></p>
+            
+            <p class="question">2. Where did we first meet?</p>
+            <button onclick="checkAnswer(this, 'Correct! 🥰')">Auditorium</button>
+            <button onclick="checkAnswer(this, 'Try again! 😆')">Thuto</button>
+            <button onclick="checkAnswer(this, 'Nope! 😜')">EBN</button>
+            <p class="feedback"></p>
+            
+            <p class="question">3. What is your favorite hobby?</p>
+            <button onclick="checkAnswer(this, 'Of course! 😍')">Bob The Builder</button>
+            <button onclick="checkAnswer(this, 'Nice guess! 😂')">Music</button>
+            <button onclick="checkAnswer(this, 'Nope! 😜')">Painting</button>
+            <p class="feedback"></p>
+            
+            <p class="question">4. What our favorite food?</p>
+            <button onclick="checkAnswer(this, 'Yay! 😋')">Ribs</button>
+            <button onclick="checkAnswer(this, 'Not quite! 😆')">Pizza</button>
+            <button onclick="checkAnswer(this, 'Nope! 😜')">Pasta</button>
+            <p class="feedback"></p>
+            
+            <p class="question">5. What is one place I really want to travel to with you?</p>
+            <button onclick="checkAnswer(this, 'Exactly! ✈️')">Zanzibar</button>
+            <button onclick="checkAnswer(this, 'Not quite! 😆')">Cape Town</button>
+            <button onclick="checkAnswer(this, 'Nope! 😜')">Mozambique</button>
+            <p class="feedback"></p>
+        </div>
+    </div>
+
+    <div class="section">
+    <h2>Virtual Gift 🎁</h2>
+    <p>Click the gift box to unwrap your surprise!</p>
+    <div class="gift-box" onclick="revealGift()">🎁 Open Gift</div>
+    
+    <!-- Hidden Image -->
+    <img id="giftImage" src="gift.jpg" style="display:none; width:100%; margin-top:10px;" alt="Virtual Gift">
+
+    <!-- Hidden Audio -->
+    <audio id="giftSound" src="gift-sound.mp3"></audio>
+</div>
+
+<script>
+    function revealGift() {
+        // Show the gift image
+        document.getElementById('giftImage').style.display = 'block';
+
+        // Play the sound
+        document.getElementById('giftSound').play();
+    }
+</script>
+
+    <script>
+        function revealMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        
+        function checkAnswer(button, response) {
+            let feedback = button.parentNode.querySelector(".feedback");
+            feedback.textContent = response;
+            feedback.style.fontWeight = "bold";
+            feedback.style.marginTop = "5px";
+        }
+    </script>
 </body>
 </html>
