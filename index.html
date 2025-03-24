@@ -71,7 +71,7 @@
             <button onclick="checkAnswer(this, 'Nope! 😜')">Painting</button>
             <p class="feedback"></p>
             
-            <p class="question">4. What our favorite food?</p>
+            <p class="question">4. What's our favorite food?</p>
             <button onclick="checkAnswer(this, 'Yay! 😋')">Ribs</button>
             <button onclick="checkAnswer(this, 'Not quite! 😆')">Pizza</button>
             <button onclick="checkAnswer(this, 'Nope! 😜')">Pasta</button>
@@ -103,7 +103,10 @@
         document.getElementById('giftImage').style.display = 'block';
 
         // Play the sound
-        document.getElementById('giftSound').play();
+       document.getElementById('giftImage').style.display = 'block';
+ // Play the sound (only works after user interaction)
+        let audio = document.getElementById('giftSound');
+        audio.play().catch(error => console.log("Audio autoplay blocked:", error));
     }
 </script>
 
