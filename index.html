@@ -88,8 +88,31 @@
    
 
   
+    <script>
+        function revealMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        
+        function checkAnswer(button, response) {
+            let feedback = button.parentNode.querySelector(".feedback");
+            feedback.textContent = response;
+            feedback.style.fontWeight = "bold";
+            feedback.style.marginTop = "5px";
+        }
     </script>
-  
+    <div class="section">
+    <h2>Virtual Gift 🎁</h2>
+    <p>Click the gift box to unwrap your surprise!</p>
+    <div class="gift-box" onclick="revealGift()">🎁 Open Gift</div>
+    <img id="giftImage" src="gift.jpg" style="display:none; width:100%; margin-top:10px;" alt="Virtual Gift">
+</div>
+
+<script>
+    function revealGift() {
+        document.getElementById('giftImage').style.display = 'block';
+    }
+</script>
+
     
 
 </body>
