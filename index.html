@@ -85,42 +85,9 @@
         </div>
     </div>
 
-    <div class="section">
-    <h2>Virtual Gift 🎁</h2>
-    <p>Click the gift box to unwrap your surprise!</p>
-    <div class="gift-box" onclick="revealGift()">🎁 Open Gift</div>
-    
-    <!-- Hidden Image -->
-    <img id="giftImage" src="gift.jpg" style="display:none; width:100%; margin-top:10px;" alt="Virtual Gift">
+   
 
-    <!-- Hidden Audio -->
-    <audio id="giftSound" src="gift-sound.mp3.band.zip"></audio>
-</div>
-
-<script>
-    function revealGift() {
-        // Show the gift image
-        document.getElementById('giftImage').style.display = 'block';
-
-        // Play the sound
-       document.getElementById('giftImage').style.display = 'block';
- // Play the sound (only works after user interaction)
-        let audio = document.getElementById('giftSound');
-        audio.play().catch(error => console.log("Audio autoplay blocked:", error));
-    }
-</script>
-
-    <script>
-        function revealMessage() {
-            document.getElementById('message').style.display = 'block';
-        }
-        
-        function checkAnswer(button, response) {
-            let feedback = button.parentNode.querySelector(".feedback");
-            feedback.textContent = response;
-            feedback.style.fontWeight = "bold";
-            feedback.style.marginTop = "5px";
-        }
+  
     </script>
   
     
