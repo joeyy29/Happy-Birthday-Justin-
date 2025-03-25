@@ -122,5 +122,33 @@
             feedback.style.marginTop = "5px";
         }
     </script>
+    <div class="section">
+    <h2>Virtual Gift 🎁</h2>
+    <p>Click the buttons below to open your gifts!</p>
+    
+    <!-- First Gift: Image and Sound -->
+    <div class="gift-box" onclick="revealGift('giftImage', 'giftSound')">🎁 Open First Gift</div>
+    <img id="giftImage" src="https://raw.githubusercontent.com/your-username/your-repository/main/gift.jpg" 
+        style="display:none; width:100%; margin-top:10px;" alt="Virtual Gift">
+    <audio id="giftSound" src="https://raw.githubusercontent.com/your-username/your-repository/main/gift-sound.mp3"></audio>
+
+    <!-- Second Gift: Audio Only -->
+    <div class="gift-box" onclick="playSecondGift()">🎧 Play Second Gift</div>
+    <audio id="secondGiftSound" src="https://raw.githubusercontent.com/your-username/your-repository/main/second-gift.mp3"></audio>
+</div>
+
+<script>
+    function revealGift(imageId, soundId) {
+        document.getElementById(imageId).style.display = 'block';
+        let audio = document.getElementById(soundId);
+        audio.play().catch(error => console.log("Audio autoplay blocked:", error));
+    }
+
+    function playSecondGift() {
+        let audio = document.getElementById('secondGiftSound');
+        audio.play().catch(error => console.log("Audio autoplay blocked:", error));
+    }
+</script>
+
 </body>
 </html>
